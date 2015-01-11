@@ -20,28 +20,44 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Stopwatch" id="MPI-sp-i4Q">
-                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="Gh4-o7-t4z"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="muw-z8-k41"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="Gh4-o7-t4z">
+                                            <connections>
+                                                <action selector="resetButtonPressed:" destination="vXZ-lx-hvc" id="BUP-Xy-LmM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="muw-z8-k41">
+                                            <connections>
+                                                <action selector="saveButtonPressed:" destination="vXZ-lx-hvc" id="kSx-JS-zIA"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3x-5Y-xAp">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="play" id="Nnt-XE-bZN"/>
+                                    <barButtonItem systemItem="play" id="Nnt-XE-bZN">
+                                        <connections>
+                                            <action selector="playButtonPressed:" destination="vXZ-lx-hvc" id="FUF-hB-dYZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Kmb-5s-svO"/>
-                                    <barButtonItem systemItem="pause" id="9pE-oy-lGs"/>
+                                    <barButtonItem systemItem="pause" id="9pE-oy-lGs">
+                                        <connections>
+                                            <action selector="pauseButtonPressed:" destination="vXZ-lx-hvc" id="YCK-fb-4Gt"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EU-L1-lB6">
-                                <rect key="frame" x="284" y="264" width="33" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7Y-L3-PKZ">
                                 <rect key="frame" x="279" y="344" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EU-L1-lB6">
+                                <rect key="frame" x="284" y="264" width="33" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -60,6 +76,10 @@
                             <constraint firstAttribute="centerY" secondItem="8EU-L1-lB6" secondAttribute="centerY" id="n4j-Ak-eD8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordLabel" destination="W7Y-L3-PKZ" id="Oqw-Be-Drv"/>
+                        <outlet property="timeLabel" destination="8EU-L1-lB6" id="e9q-6R-tGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
